@@ -6,5 +6,5 @@ mongoose.connect('mongodb://localhost:27017/Social_Network_Api', {
   useUnifiedTopology: true,
 });
 
-// Export connection
+
 module.exports = mongoose.connection;

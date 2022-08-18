@@ -8,8 +8,8 @@ const reactionSchema = new Schema({
   reaction_body: {
     type: String,
     required: true,
-    minLength: 1,
-    maxLength: 280,
+    min: 1,
+    max: 280,
     trim: true,
   },
   username: [{
@@ -34,5 +34,5 @@ userSchema.virtual('reaction_count').get(function () {
 });
 
 
-const Thoughts = model('Reactions', thoughtSchema);
-module.exports = Thoughts;
+const Reactions = model('Reactions', thoughtSchema);
+module.exports = Reactions;
