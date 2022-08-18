@@ -4,10 +4,18 @@ const Thoughts = require('../models/Thoughts')
 
 
 
-api_router.get('/groups', async (req, res) => {
-    const groups = await Group.find().populate('students');
-  
-    res.send(groups);
+api_router.get('/users', async (req, res) => {
+    Users.find()
+      .then(users => {
+        res.json(users)})
+  });
+  api_router.post('/users', async (req, res) => {
+    Users.create({
+      email: req.body.email,
+      thoughts: req.body.thoughts
+    })
+      .then(createdUsers => {
+        res.json(createdUsers)})
   });
 
 
